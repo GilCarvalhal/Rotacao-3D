@@ -1,0 +1,52 @@
+body {
+  background-color: #000000;
+}
+
+div{
+  display: flex;
+  }
+
+.container {
+  height: 400px;
+  width: 220px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  margin-left: 35em;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.container:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.container:hover .back {
+  transform: rotateY(0deg);
+}
+
+#front,
+#verso {
+  height: 40rem;
+  border-radius: 30px;
+}
+
+#verso {
+  box-sizing: border-box;
+  border: 3px solid rgb(252, 252, 0);
+  padding: 35px;
+  margin: 10px;
+}
